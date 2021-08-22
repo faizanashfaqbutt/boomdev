@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "AllerDisplay";
+    src: url("./AllerDisplay.ttf");
+}
+
+@font-face {
+    font-family: "Arial Rounded MT Bold";
+    src: url("./Arial Rounded Bold.ttf");
+}
+
+@font-face {
+    font-family: "PingFang";
+    src: url("./PingFang.ttf");
+}
+
+@font-face {
+    font-family: 'Open Sans Regular';
+    src: url("../opensans/OpenSans-Regular.ttf")
+}
+
+@font-face {
+    font-family: 'Open Sans Light';
+    src: url("../opensans/OpenSans-Light.ttf")
+}
+
+@font-face {
+    font-family: 'Open Sans Bold';
+    src: url("../opensans/OpenSans-Bold.ttf")
+}
+
+@font-face {
+    font-family: 'Open Sans Extra Bold';
+    src: url("../opensans/OpenSans-ExtraBold.ttf")
+}

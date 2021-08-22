@@ -1,0 +1,23 @@
+@import "~sass-mq/mq";
+
+$primary-color: #f43c58;
+$primary-font: Roboto;
+$primary-secondary-color: #000;
+$mobile-width: 767px;
+$desktop-width: 768px;
+$shadow-normal-light: 7px 5px 10px rgba(0, 0, 0, 0.1), -7px -5px 10px rgba(255, 255, 255, 0.5);
+$shadow-inset-light: inset 7px 5px 10px rgba(0, 0, 0, 0.1), inset -7px -5px 10px rgba(255, 255, 255, 0.5);
+$white: #fff;
+$lightgray: #e2e2e2;
+$dark-blue: #2a354c;
+$primary-blue: #4265e4;
+$gray: #5a5a5a;
+$gray1: #cacaca;
+$primary-red: #db4437;
+
+$mq-breakpoints: (
+  mobile: 576px,
+  tablet: 768px,
+  desktop: 992px,
+  wide: 1200px,
+);

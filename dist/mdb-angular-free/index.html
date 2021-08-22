@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%" ng-app="swipe.example" ng-controller="swipeCtrl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Boomcovered</title>
+    <base href="/" />
+
+    <!--meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
+    <link rel="icon" type="image/svg+xml" href="./assets/images/logo/logo-white.svg" />
+    <link href="https://fonts.googleapis.com/css?family=Exo|Open+Sans|Lobster|Dosis|Nunito|Righteous|Comfortaa:700|Poppins" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700i,800i,900,900iAnton|Yanone+Kaffeesatz&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+    <!-- For datepicker -->
+    <link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-inputs/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-popups/styles/material.css" rel="stylesheet" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-calendars/styles/material.css" rel="stylesheet" />
+    <!-- End datepicker -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>-->
+    <!--<script src="https://cdn.rawgit.com/hammerjs/touchemulator/master/touch-emulator.js"></script>-->
+
+    <script src="/assets/javascripts/storage.js"></script>
+    <script src="node_modules/chart.js/src/chart.js"></script>
+    <style type="text/css">
+      body {
+        font-family: 'Open Sans Light' !important;
+      }
+
+      @media screen and (max-width: 768px) {
+        .lds-roller {
+          left: 40% !important;
+        }
+      }
+      ngb-modal-window {
+        width: 97%;
+      }
+
+    #site-loader
+    {
+      position: absolute;
+      width:100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+ #site_main_content
+    {
+      display: none;
+    }
+    /*loder css*/
+    #site-loader .map_loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+}
+#site-loader .spinner > div {
+  width: 28px;
+  height: 28px;
+  background-color: #333;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+#site-loader .spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+#site-loader .spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+/*end*/
+    </style>
+    <script>
+      window.devMode = location.href.indexOf("192.168.0.150") > -1;
+    </script>
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+  <body id="boom_body">
+
+    <div id="site-loader">
+      <!-- <div class="map_loader spinner" >
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+     </div> -->
+    <!--img src="assets/images/loading_dots.gif" class="start_loader_img"-->
+    </div>
+
+    <div id="site_main_content">
+    <app-root></app-root>
+    </div>
+    <!-- begin olark code -->
+
+    <script type="text/javascript">
+      setTimeout(function(){
+        document.getElementById('site-loader').style.display = "none";
+        document.getElementById('site_main_content').style.display = "block";
+      },3500);
+
+      var pageFullUrl = document.URL;
+      var pageUrl = pageFullUrl.indexOf("policy-chat");
+      if(pageUrl < 0){
+        (function (o, l, a, r, k, y) {
+          if (o.olark) return;
+          r = "script";
+          y = l.createElement(r);
+          r = l.getElementsByTagName(r)[0];
+          y.async = 1;
+          y.src = "//" + a;
+          r.parentNode.insertBefore(y, r);
+          y = o.olark = function () {
+            k.s.push(arguments);
+            k.t.push(+new Date());
+          };
+          y.extend = function (i, j) {
+            y("extend", i, j);
+          };
+          y.identify = function (i) {
+            y("identify", (k.i = i));
+          };
+          y.configure = function (i, j) {
+            y("configure", i, j);
+            k.c[i] = j;
+          };
+          k = y._ = { s: [], t: [+new Date()], c: {}, l: a };
+        })(window, document, "static.olark.com/jsclient/loader.js");
+        /* Add configuration calls below this comment */
+        olark.identify("4797-648-10-9515");
+      }
+
+      /*mac os detaction*/
+      var system =  document.getElementById("boom_body");
+      if (navigator.userAgent.indexOf('Mac OS X') != -1) {
+            system.className += "mac_os";
+          } else {
+            system.className += "windows_os";
+          }
+    </script>
+    <!-- end olark code -->
+
+  <script src="runtime.js" defer></script><script src="polyfills-es5.js" nomodule defer></script><script src="polyfills.js" defer></script><script src="styles.js" defer></script><script src="scripts.js" defer></script><script src="vendor.js" defer></script><script src="main.js" defer></script></body>
+</html>
+<!---->
